@@ -1,0 +1,39 @@
+.alert {
+    margin: 0 0 32px;
+    padding: 16px 34px 20px 16px;
+    position: relative;
+    border-radius: $border-radius;
+    background-color: $alert-bg-color;
+    color: $text-color-2;
+    line-height: 24px;
+    display: none;
+    &_show {
+        display: flex;
+    }
+    &__ico {
+        width: 32px;
+        height: 32px;
+        fill: $info-color;
+        margin-right: 17px;
+    }
+    &__text {
+        // reserved
+    }
+    &__close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        fill: $text-color-secondary;
+        width: 16px;
+        height: 16px;
+        transition: $transition;
+        cursor: pointer;
+        &:hover {
+            fill: $black
+        }
+        &-ico {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

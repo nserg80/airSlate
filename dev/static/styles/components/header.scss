@@ -1,0 +1,18 @@
+.header {
+    grid-area: header;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    display: flex;
+    padding: 12px 24px;
+    background: $white;
+    border-bottom: 1px solid $border-color;
+    &__logo {
+        display: inline-block;
+        width: 240px;
+        overflow: hidden;
+        margin-right: auto;
+        img {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,56 @@
+.form-control {
+    vertical-align: middle;
+    display: inline-flex;
+    border: 1px solid $border-color-forms;
+    border-radius: $border-radius;
+    height: 32px;
+    padding: 6px 16px 7px;
+    font-size: 14px;
+    line-height: 17px;
+    color: $text-color-2;
+    transition: $transition;
+    outline: none;
+    &:hover {
+        border-color: $primary-color;
+    }
+    &::-webkit-input-placeholder {
+        color: $placeholder-color;
+    }
+    &::-moz-placeholder {
+        color: $placeholder-color;
+        opacity: 1;
+    }
+    &:-moz-placeholder {
+        color: $placeholder-color;
+    }
+    &:-ms-input-placeholder {
+        color: $placeholder-color;
+    }
+    &::-ms-clear {
+        display: none;
+    }
+    &::-webkit-search-cancel-button {
+        display: none;
+    }
+}
+
+.search {
+    position: relative;
+    &__field {
+        padding-left: 32px;
+        width: 100%;
+    }
+    &__btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        padding: 8px 8px 0;
+        cursor: pointer;
+    }
+    &__icon {
+        width: 16px;
+        height: 16px;
+        fill: $text-color-2;
+    }
+}

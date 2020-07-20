@@ -1,0 +1,68 @@
+[
+    {
+        "customerName": "Ford Motor Company",
+        "dateOfSale": "01/01/20",
+        "product": "airSlate",
+        "seats": "7",
+        "perSeat": "$20",
+        "revenue": "$140",
+        "comissions": "20%",
+        "totalPerSale": "$7",
+        "status": "status1"
+    },
+    {
+        "customerName": "Ford Motor Company",
+        "dateOfSale": "01/01/20",
+        "product": "airSlate",
+        "seats": "4",
+        "perSeat": "$15",
+        "revenue": "$40",
+        "comissions": "20%",
+        "totalPerSale": "$6",
+        "status": "status2"
+    },
+    {
+        "customerName": "Mazda Motor Corporation",
+        "dateOfSale": "01/02/20",
+        "product": "pdFiller",
+        "seats": "3",
+        "perSeat": "$10",
+        "revenue": "$30",
+        "comissions": "20%",
+        "totalPerSale": "$1",
+        "status": "status3"
+    },
+    {
+        "customerName": "Tesla",
+        "dateOfSale": "01/03/20",
+        "product": "signNow",
+        "seats": "5",
+        "perSeat": "$40",
+        "revenue": "$20",
+        "comissions": "20%",
+        "totalPerSale": "$20",
+        "status": "status4"
+    },
+    {
+        "customerName": "NASA",
+        "dateOfSale": "01/02/20",
+        "product": "pdFiller",
+        "seats": "3",
+        "perSeat": "$10",
+        "revenue": "$30",
+        "comissions": "20%",
+        "totalPerSale": "$1",
+        "status": "status5"
+    },
+    {
+        "customerName": "IBM Corporation",
+        "dateOfSale": "01/03/20",
+        "product": "signNow",
+        "seats": "5",
+        "perSeat": "$40",
+        "revenue": "$20",
+        "comissions": "20%",
+        "totalPerSale": "$20",
+        "status": "status5"
+    }
+]

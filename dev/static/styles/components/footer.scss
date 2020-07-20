@@ -1,0 +1,13 @@
+.footer {
+    grid-area: footer;
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    padding: 18px 24px;
+    background: $white;
+    border-top: 1px solid $border-color;
+    font-size: $secondary-font-size;
+    text-align: center;
+    p {
+        margin: 0;
+    }
+}

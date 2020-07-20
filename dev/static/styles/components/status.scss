@@ -1,0 +1,28 @@
+.status {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 8px;
+    &_1 {
+        background: $status-color-1;
+    }
+    &_2 {
+        background: $status-color-2;
+    }
+    &_3 {
+        background: $status-color-3;
+    }
+    &_4 {
+        background: $status-color-4;
+    }
+    &_5 {
+        background: $status-color-5;
+    }
+    &_6 {
+        background: $status-color-5;
+    }
+}

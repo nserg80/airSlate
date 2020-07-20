@@ -1,0 +1,82 @@
+$user-menu: user-menu;
+.#{$user-menu} {
+    position: relative;
+    margin-left: 16px;
+    &:hover {
+        .#{$user-menu} {
+            &__dropdown {
+                display: block;
+            }
+            &__opener {
+                &-arrow {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+    &__opener {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        &-pic {
+            display: block;
+            width: 32px;
+            height: 32px;
+            background: $white;
+            border: 1px solid $border-color-2;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+        }
+        &-arrow {
+            width: 16px;
+            height: 16px;
+            transition: $transition;
+        }
+    }
+    &__dropdown {
+        display: none;
+        position: absolute;
+        z-index: 10;
+        top: 100%;
+        right: 0;
+        padding-top: 12px;
+    }
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border: 1px solid $border-color;
+        background: $white;
+        padding: 8px 16px;
+        min-width: 100px;
+    }
+    &__item {
+        margin: 4px 0;
+    }
+}
+
+.default-userpic {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #7a91ad;
+    background: #fef9f2;
+    &:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 100%;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        border: 2px solid #7a91ad;
+        background: #fef9f2;
+    }
+}

@@ -1,0 +1,45 @@
+.btn {
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    border-radius: $border-radius;
+    height: 32px;
+    padding: 7px 12px 8px;
+    font-size: $secondary-font-size;
+    line-height: 15px;
+    font-weight: 600;
+    transition: $transition;
+    cursor: pointer;
+    outline: none;
+    &_primary {
+        color: $white;
+        background: $primary-color;
+        border: 1px solid $primary-color;
+        &:hover {
+            background: darken($primary-color, 2%);
+            border-color: darken($primary-color, 2%);
+        }
+    }
+    &_outline {
+        color: $text-color-2;
+        background: $white;
+        border: 1px solid $border-color-forms;
+        &:hover {
+            border-color: $primary-color;
+        }
+    }
+    &__ico {
+        fill: currentColor;
+        width: 16px;
+        height: 16px;
+        &_left {
+            margin-right: 8px;
+        }
+        &_right {
+            margin-left: 8px;
+        }
+    }
+}

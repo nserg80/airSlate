@@ -1,0 +1,34 @@
+-
+    const navItems = [
+        {linkName: 'Dashboard', linkUrl: '/'}, 
+        {linkName: 'Payments', linkUrl: '/pages/payments.html'}, 
+        {linkName: 'History', linkUrl: '#'}, 
+        {linkName: 'Documents', linkUrl: '#'},
+        {linkName: 'FAQ', linkUrl: '#'},
+        {linkName: 'About', linkUrl: '#'}, 
+        {linkName: 'Contact Us', linkUrl: '#'}
+    ]
+
+
+header.header
+    
+    strong.header__logo
+        a(href="/") #[img(src="/static/images/common/air-slate-additional.svg", alt="airSlate | Partner Portal")]
+    ul.nav
+        each item in navItems
+            li(class={nav__item_active: currentUrl === item.linkUrl}).nav__item
+                a(href=item.linkUrl).nav__link=item.linkName
+    
+    .user-menu 
+        .user-menu__opener
+            .user-menu__opener-pic
+                .default-userpic
+            +icon('select-down', 'user-menu__opener-arrow')
+        .user-menu__dropdown
+            ul.user-menu__list
+                li.user-menu__item
+                    a(href="#") Item1
+                li.user-menu__item
+                    a(href="#") Item2
+                li.user-menu__item
+                    a(href="#") Item3

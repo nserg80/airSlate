@@ -1,0 +1,224 @@
+.pay-report {
+    &__toolbar {
+        display: flex;
+        align-items: center;
+        margin: 0 0 16px;
+    }
+    &__btn-month {
+        margin: 0 auto 0 12px;
+        min-width: 112px;
+    }
+    &__search {
+        width: 217px;
+    }
+    &__content {
+        border: 1px solid $border-color-2;
+        border-radius: $border-radius;
+        background: $white;
+    }
+    &__footer {
+        display: flex;
+        background: $bg-color-payments;
+        padding: 11px 24px;
+        border-radius: 0 0 calc(#{$border-radius} - 1px) calc(#{$border-radius} - 1px);
+        border-top: 1px solid $border-color-2;
+        &-btn {
+            margin-left: auto;
+        }
+    }
+}
+
+// pay-table
+$pay-table: pay-table;
+.#{$pay-table} {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    &__cell {
+        height: 51px;
+        line-height: 50px;
+        padding: 0 1.285%;
+        border-bottom: 1px solid $border-color;
+        position: relative;
+        @media screen and (max-width: 1200px) {
+            padding: 0;
+            &:before {display: none;}
+        }
+        &:first-child {
+            width: auto;
+        }
+        &:nth-child(2) {
+            width: 12.313%;
+        }
+        &:nth-child(3) {
+            width: 9.636%;
+        }
+        &:nth-child(4) {
+            width: 9.636%;
+            text-align: right;
+        }
+        &:nth-child(5) {
+            width: 9.636%;
+            text-align: right;
+        }
+        &:nth-child(6) {
+            width: 10.814%;
+            text-align: right;
+        }
+        &:nth-child(7) {
+            text-align: right;
+            width: 12.313%;
+        }
+        &:last-child {
+            width: 13.919%;
+            text-align: right;
+        }
+        &:not(&_header) {
+            &:first-child,
+            &:last-child {
+                &:before {
+                    content: '';
+                    position: absolute;
+                    bottom: -1px;
+                    width: 14px;
+                    border-bottom: 1px solid $white;
+                }
+            }
+            &:first-child {
+                &:before {
+                    left: 0;
+                }
+            }
+            &:last-child {
+                &:before {
+                    right: 0;
+                }
+            }
+        }
+        &-inner {
+            padding: 0 8px;
+            height: 100%;
+            display: block;
+            max-width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            position: relative;
+        }
+        &_header {
+            height: 31px;
+            font-size: $secondary-font-size;
+            line-height: 30px;
+            font-weight: bold;
+            text-align: left;
+            background: $bg-color-payments;
+            border-bottom-color: $border-color-2;    
+            &:first-child {
+                border-top-left-radius: calc(#{$border-radius} - 1px);
+            }
+            &:last-child {
+                border-top-right-radius: calc(#{$border-radius} - 1px);
+            }
+        }
+        &_header &-inner {
+            cursor: pointer;
+            &:hover {
+                background: $bg-color-sort-header;
+            }
+        }
+        &_sorted &-inner {
+            background: $bg-color;
+            padding-right: 22px;
+        }
+        &_header#{&}_sorted &-inner {
+            background: $bg-color-sort-header;
+        }
+        &_sorted {
+            .#{$pay-table}__icon-sort {
+                display: inline-block;
+            }
+        }
+    }
+    &__txt {
+        display: inline-block;
+        vertical-align: top;
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    &__icon-sort {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        top: 50%;
+        margin-left: 3px;
+        margin: -4px 0 0 7px;
+        fill: currentColor;
+        display: none;
+    }
+}
+
+// pay-summary
+.pay-summary {
+    border-collapse: collapse;
+    width: 188px;
+    margin: 0 14px 12px auto;
+    @media screen and (max-width: 1200px) {
+        margin-right: 0;
+    }
+    &__cell {
+        height: 30px;
+        line-height: 28px;
+        border-bottom: 1px solid $border-color;
+        text-align: right;
+        padding: 0 8px;
+        &_total {
+            font-weight: bold;
+            border-bottom: none;
+        }
+    }
+}
+
+// pay-info 
+.pay-info {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    &__item {
+        display: flex;
+        align-items: center;
+        margin-right: 29px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &__title {
+        margin-right: 8px;
+    }
+    img {
+        display: block;
+    }
+    &__hint {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin: 0 0 0 4px;
+        &-ico {
+            width: 12px;
+            height: 12px;
+            fill: $info-color;
+            cursor: pointer;
+        }
+        .popover {
+            width: 534px;
+        }
+        &:hover {
+            .popover {
+                display: block;
+            }
+        }
+    }
+}

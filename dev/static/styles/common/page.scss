@@ -1,0 +1,36 @@
+.page {
+    display: grid;
+    display: -ms-grid;
+    grid-template-rows: minmax(100vh, 1fr);
+         -ms-grid-rows: minmax(100vh, 1fr);
+    grid-template-columns: 1fr;
+         -ms-grid-columns: 1fr;
+    
+    &__frame {
+        display: grid;
+        display: -ms-grid;
+        min-height: 100vh;
+        grid-template-rows: auto 1fr auto;
+             -ms-grid-rows: auto 1fr auto;
+        grid-template-columns: 1fr;
+        -ms-grid-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+    }
+    &__main {
+        grid-area: main;
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+        width: 73.2%;
+        margin: 0 auto;
+        padding: 16px 0 52px;
+    }
+    &__header {
+        margin: 0 0 32px;
+    }
+    &__title {
+        margin: 0 0 8px;
+    }
+}

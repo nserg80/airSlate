@@ -1,0 +1,64 @@
+.month-selector {
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: relative;
+    border: 1px solid $border-color-forms;
+    border-radius: $border-radius;
+    background: $white;
+    height: 32px;
+    line-height: 30px;
+    font-weight: 600;
+    color: $text-color-2;
+    padding: 0 32px;
+    width: 216px;
+    transition: $transition;
+    flex-shrink: 0;
+    &:hover {
+        border-color: $primary-color;
+    }
+    &__prev-btn,
+    &__next-btn {
+        position: absolute;
+        top: 0;
+        height: 30px;
+        width: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    &__prev-btn {
+        left: 0;
+        transform: rotate(90deg);
+    }
+    &__next-btn {
+        right: 0;
+        transform: rotate(-90deg);
+    }
+    &__arrow {
+        width: 17px;
+        height: 17px;
+        fill: currentColor;
+    }
+    &__ico-calendar {
+        flex-shrink: 0;
+        width: 16px;
+        height: 16px;
+        fill: currentColor;
+        margin-right: 8px;
+        margin: 0 8px 0 6px;
+        cursor: pointer;
+    }
+    &__content {
+        display: inline-flex;
+        align-items: center;
+    }
+    &__value {
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

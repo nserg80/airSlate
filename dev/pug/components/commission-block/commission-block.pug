@@ -1,0 +1,34 @@
+- 
+    let commissionData = [
+        {
+            commission: '20',
+            earned: '123',
+            img: '/static/images/components/commission-block/air-slate.svg'
+        },
+        {
+            commission: '20',
+            earned: '345',
+            img: '/static/images/components/commission-block/pdf-filler-color.svg'
+        },
+        {
+            commission: '20',
+            earned: '678',
+            img: '/static/images/components/commission-block/sign-now-color.svg'
+        }
+    ]
+
+.commission-block
+    each item in commissionData
+        .commission-block__col
+            .commission-block__card.card
+                .commission-block__text
+                    .commission-block__item
+                        strong.commission-block__value 	#{item.commission}
+                            span.commission-block__percent %
+                        .
+                            commission
+                    .commission-block__item
+                        strong.commission-block__value $#{item.earned}
+                        .
+                            earned
+                img(src=(item.img), alt="image")

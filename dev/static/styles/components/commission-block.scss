@@ -1,0 +1,41 @@
+$commission-block: commission-block;
+
+.#{$commission-block} {
+    display: flex;
+    margin: 0 -12px 40px;
+    font-size: $secondary-font-size;
+    color: $text-color-secondary;
+    &__col {
+        flex-basis: 33.33%;
+        max-width: 33.33%;
+        flex-shrink: 0;
+        padding: 0 12px;
+    }
+    &__card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__text {
+        overflow: hidden;
+    }
+    &__item {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    &__value {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 600;
+        color: $text-color-2;
+        margin-right: 12px;
+    }
+    &__percent {
+        font-size: 16px;
+        vertical-align: top;
+        position: relative;
+        top: -2px;
+        margin-left: 2px;
+    }
+}

@@ -1,0 +1,131 @@
+extends ../layout/main
+
+block variables
+	- let title = 'airSlate - Payments'
+	- let currentUrl = '/pages/payments.html'
+
+block content
+	
+	include ../components/alert/alert
+	
+	.page__header
+		h1.page__title My Commissions &amp; Payments
+		p Your current commission structure is:
+	
+	include ../components/commission-block/commission-block
+
+	.pay-report
+		.pay-report__toolbar
+			.month-selector
+				span.month-selector__prev-btn
+					+icon('select-down', 'month-selector__arrow')
+				+icon('calendar', 'month-selector__ico-calendar')
+				.month-selector__value September, 2020
+				span.month-selector__next-btn
+					+icon('select-down', 'month-selector__arrow')
+
+			button.btn.btn_outline.pay-report__btn-month This month
+			.search.pay-report__search
+				label(for="search").search__btn
+					+icon('search', 'search__icon')
+				input(type='search', id="search", placeholder='Search for customer').form-control.search__field
+	
+		.pay-report__content
+			table.pay-report__table.pay-table
+				thead
+					th(title="Customer name").pay-table__cell.pay-table__cell_header: span.pay-table__cell-inner
+						span.pay-table__txt Customer name
+						+icon('down', 'pay-table__icon-sort')
+					
+					th(title="Date of sale").pay-table__cell.pay-table__cell_header: span.pay-table__cell-inner
+						span.pay-table__txt Date of sale
+						+icon('down', 'pay-table__icon-sort')
+					
+					th(title="Product").pay-table__cell.pay-table__cell_header: span.pay-table__cell-inner
+						span.pay-table__txt Product
+						+icon('down', 'pay-table__icon-sort')
+					
+					th(title="Seats").pay-table__cell.pay-table__cell_header.pay-table__cell_sorted: span.pay-table__cell-inner
+						span.pay-table__txt Seats
+						+icon('down', 'pay-table__icon-sort')
+					
+					th(title="Per seat").pay-table__cell.pay-table__cell_header: span.pay-table__cell-inner
+						span.pay-table__txt Per seat
+						+icon('down', 'pay-table__icon-sort')
+					
+					th(title="Revenue").pay-table__cell.pay-table__cell_header: span.pay-table__cell-inner
+						span.pay-table__txt Revenue
+						+icon('down', 'pay-table__icon-sort')
+					
+					th(title="Comissions").pay-table__cell.pay-table__cell_header: span.pay-table__cell-inner
+						span.pay-table__txt Comissions
+						+icon('down', 'pay-table__icon-sort')
+					
+					th(title="Total per sale").pay-table__cell.pay-table__cell_header: span.pay-table__cell-inner
+						span.pay-table__txt Total per sale
+						+icon('down', 'pay-table__icon-sort')
+				tbody
+					each item in reportData
+						tr
+							td.pay-table__cell: span.pay-table__cell-inner
+								case item.status
+									when 'status1'
+										span.status.status_1
+									when 'status2'
+										span.status.status_2
+									when 'status3'
+										span.status.status_3
+									when 'status4'
+										span.status.status_4
+									when 'status5'
+										span.status.status_5
+									when 'status6'
+										span.status.status_6
+									default
+										span.status
+								| #{item.customerName}
+							td.pay-table__cell: span.pay-table__cell-inner #{item.dateOfSale}
+							td.pay-table__cell: span.pay-table__cell-inner #{item.product}
+							td.pay-table__cell.pay-table__cell_sorted: span.pay-table__cell-inner #{item.seats}
+							td.pay-table__cell: span.pay-table__cell-inner #{item.perSeat}
+							td.pay-table__cell: span.pay-table__cell-inner #{item.revenue}
+							td.pay-table__cell: span.pay-table__cell-inner #{item.comissions}
+							td.pay-table__cell: span.pay-table__cell-inner #{item.totalPerSale}
+
+			table.pay-summary
+				tr
+					td.pay-summary__cell Total by month
+					td.pay-summary__cell $55
+				tr
+					td.pay-summary__cell Carryover
+					td.pay-summary__cell $22	
+				tr
+					td.pay-summary__cell State tax 8.25%
+					td.pay-summary__cell $12
+				tr
+					td.pay-summary__cell.pay-summary__cell_total GRAND TOTAL
+					td.pay-summary__cell.pay-summary__cell_total $76.45
+
+
+			footer.pay-report__footer
+				ul.pay-info
+					li.pay-info__item
+						strong.pay-info__title Payment:
+						a(href="#"): img(src="/static/images/common/card-stripe.svg", alt="stripe")
+					li.pay-info__item 
+						strong.pay-info__title Status:
+						| Future
+						span.pay-info__hint
+							+icon('info2', 'pay-info__hint-ico')
+							div.popover
+								span.popover__arrow
+								.popover__body
+										| You will receive the payment within 60 days from the moment the customer paid for the service.
+										br
+										| You need to accumulate at least $100 to got paid.
+
+
+				
+				button.btn.btn_primary.pay-report__footer-btn
+					+icon('download', 'btn__ico btn__ico_left')
+					| Download report

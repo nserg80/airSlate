@@ -1,0 +1,24 @@
+// common styles
+@import "common/main";
+
+// for png sprite
+// @include sprites($spritesheet-sprites);
+*,
+*:before,
+*:after { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  min-width: $min-width;
+}
+
+body {
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  font: #{$base-font-size}/#{$base-line-height} $base-font;
+  background: $bg-color;
+  color: $text-color;
+}
+
+// components styles
+@import "components/main";
